@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import CustomButton from '../../../Components/button-component/button.component'
 import FormInput from '../../../Components/Form-Input/form.input.component';
 
 function SignIn() {
@@ -39,7 +40,7 @@ function SignIn() {
             label='password'
             required
           />
-            <input type="submit" value="Submit Form"/>
+            <CustomButton type='submit'> Sign In </CustomButton>
            </form>
        </div>
     )
