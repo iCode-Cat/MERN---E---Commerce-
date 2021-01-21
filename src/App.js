@@ -6,7 +6,7 @@ import Header from './header/header.component';
 import { Homepage } from './pages/homepage/homepage.component'; 
 import Shop from './pages/homepage/shop/shop.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up'
-import { auth } from './firebase/firebase.utility'
+import { auth, createUserProfileDocument } from './firebase/firebase.utility'
 
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
 
 
   useEffect(()=> {
-    auth.onAuthStateChanged(user => {
-      setCurrentUser({user})
+    auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user)
       
     })
   }, [])
