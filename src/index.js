@@ -6,18 +6,25 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
-import store from '../src/pages/redux/store'
+import store  from '../src/pages/redux/store'
+import {createStore} from 'redux';
+import  reducer  from '../src/pages/redux/root-reducer'
+
+const reactr =  createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 ReactDOM.render(
- 
+  
   <React.StrictMode>
-   
+   <Provider store={store} >
   <BrowserRouter>
-  <Provider store={store} >
+  
     <App />
-    </Provider>
+    
     </BrowserRouter>
-   
-  </React.StrictMode>,
+    </Provider>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

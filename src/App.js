@@ -13,11 +13,12 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utility'
 
 
 function App(props) {
-  console.log(props.state);
+  console.log(props);
   // const [currentUser, setCurrentUser] = useState({user:null});
   let history = useHistory();
 
   useEffect(()=> {
+    const { setCurrentUser } = props;
     auth.onAuthStateChanged(async userAuth => {
 
       if(userAuth){
@@ -33,7 +34,7 @@ function App(props) {
         })
       }
       
-      setCurrentUser({userAuth})
+      setCurrentUser(userAuth)
       
     });
 
@@ -42,6 +43,8 @@ function App(props) {
     // }
     
   }, [])
+
+  console.log(setCurrentUser);
   
   
   return (
