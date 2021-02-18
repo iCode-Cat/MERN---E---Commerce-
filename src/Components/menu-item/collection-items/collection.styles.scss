@@ -1,8 +1,11 @@
 .collection-item {
+  position: relative;
     width: 22%;
     display: flex;
     flex-direction: column;
     height: 350px;
+    align-items: center;
+    justify-content: center;
     align-items: center;
   
     .image {
@@ -12,6 +15,8 @@
       background-position: center;
       margin-bottom: 5px;
     }
+
+
   
     .collection-footer {
       width: 100%;
@@ -31,3 +36,9 @@
     }
   }
   
+
+  .collection-item:hover {
+
+    opacity: 80%;
+
+  }
